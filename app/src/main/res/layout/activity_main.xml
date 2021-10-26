@@ -4,15 +4,132 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#008495"
+    tools:context=".MainActivity" >
 
     <TextView
+        android:id="@+id/txtExplicacao"
+        android:layout_width="411dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="64dp"
+        android:shadowColor="@color/white"
+        android:text="Considerando uma equação do 2º grau do tipo ax² + bx + c = 0, informe os valores de a, b e c para calcular as raízes da equação"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/txtCoeficienteA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgEquacao"
+        android:layout_width="114dp"
+        android:layout_height="151dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtNomeApp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.714"
+        tools:srcCompat="@drawable/_772624_math_mathematics_square_square_sign_x_square_icon" />
+
+    <TextView
+        android:id="@+id/txtNomeApp"
+        android:layout_width="257dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="App Bhaskara"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtExplicacao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCoeficienteA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="44dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Coeficiente A"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/txtCoeficienteB"
+        app:layout_constraintEnd_toStartOf="@+id/editTxtValorA"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCoeficienteC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="216dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Coeficiente C"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/editTxtValorC"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCoeficienteB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="44dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Coeficiente B"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/txtCoeficienteC"
+        app:layout_constraintEnd_toStartOf="@+id/editTextValorB"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTxtValorA"
+        android:layout_width="219dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Valor"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/editTextValorB"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextValorB"
+        android:layout_width="219dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Valor"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/editTxtValorC"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/editTxtValorC"
+        android:layout_width="219dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="200dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Valor"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
