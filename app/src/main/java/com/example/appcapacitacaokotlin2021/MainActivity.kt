@@ -23,11 +23,18 @@ class MainActivity : AppCompatActivity() {
         btnCalcular = findViewById(R.id.btnCalcular)
 
         btnCalcular.setOnClickListener() {
-            var delta = calcularDelta(editTxtValorA.text.toString().toDouble(), editTxtValorB.text.toString().toDouble(), editTxtValorC.text.toString().toDouble())
+            var a = editTxtValorA.text.toString().toDouble()
+            var b = editTxtValorB.text.toString().toDouble()
+            var c = editTxtValorC.text.toString().toDouble()
+
+            var delta = calcularDelta(a, b, c)
+
             if (delta < 0) {
-                Toast.makeText(applicationContext, "O valor de delta é " + delta + ". A equação não possui raízes reais.", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "O valor de delta é $delta. A equação não possui raízes reais.", Toast.LENGTH_LONG).show()
             } else {
-                //Cálculo das raízes
+                var x1 = (-b + Math.sqrt(delta)) / 2*a
+                var x2 = (-b - Math.sqrt(delta)) / 2*a
+                Toast.makeText(applicationContext, "O valor de delta é $delta. Portanto, x1 = $x1 e x2 = $x2", Toast.LENGTH_LONG).show()
             }
         }
     }
