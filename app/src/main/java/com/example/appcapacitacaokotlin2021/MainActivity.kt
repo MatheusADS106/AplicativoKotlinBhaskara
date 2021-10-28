@@ -24,17 +24,20 @@ class MainActivity : AppCompatActivity() {
 
         btnCalcular.setOnClickListener() {
             var a = editTxtValorA.text.toString().toDouble()
-            var b = editTxtValorB.text.toString().toDouble()
-            var c = editTxtValorC.text.toString().toDouble()
+            if (a != 0.0) {
+                var b = editTxtValorB.text.toString().toDouble()
+                var c = editTxtValorC.text.toString().toDouble()
+                var delta = calcularDelta(a, b, c)
 
-            var delta = calcularDelta(a, b, c)
-
-            if (delta < 0) {
-                Toast.makeText(applicationContext, "O valor de delta é $delta. A equação não possui raízes reais.", Toast.LENGTH_LONG).show()
+                if (delta < 0) {
+                    Toast.makeText(applicationContext, "O valor de delta é $delta. A equação não possui raízes reais.", Toast.LENGTH_LONG).show()
+                } else {
+                    var x1 = (-b + Math.sqrt(delta)) / 2 * a
+                    var x2 = (-b - Math.sqrt(delta)) / 2 * a
+                    Toast.makeText(applicationContext, "O valor de delta é $delta. Portanto, x1 = $x1 e x2 = $x2", Toast.LENGTH_LONG).show()
+                }
             } else {
-                var x1 = (-b + Math.sqrt(delta)) / 2*a
-                var x2 = (-b - Math.sqrt(delta)) / 2*a
-                Toast.makeText(applicationContext, "O valor de delta é $delta. Portanto, x1 = $x1 e x2 = $x2", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "O coeficiente A não pode ser zero!", Toast.LENGTH_LONG).show()
             }
         }
     }
